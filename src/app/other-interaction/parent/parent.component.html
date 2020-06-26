@@ -1,0 +1,9 @@
+<h3>Parent Component</h3>
+<h6>Friends List:</h6>
+<button (click)="isShowMessage=true">Show</button>
+<button (click)="isShowMessage=false">Hide</button>
+<app-child
+  [isChildShowMessage]="isShowMessage"
+  [loggedIn]="userLoggedIn"
+  [childLoggedIn]="userChildLoggedIn"
+></app-child>

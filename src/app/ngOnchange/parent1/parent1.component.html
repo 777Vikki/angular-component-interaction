@@ -1,0 +1,13 @@
+<h3>Friend Lists:</h3>
+<ul>
+  <li><button (click)="fName = 'vivek'">Show Vivek</button></li>
+  <li><button (click)="fName = 'ajeet'">Show Ajeet</button></li>
+  <li><button (click)="fName = 'uttam'">Show Uttam</button></li>
+  <li><button (click)="fName = 'amar'">Show Amar</button></li>
+  <li><button (click)="fName = 'ankur'">Show Ankur</button></li>
+</ul>
+<button (click)="changeChildTitle()">Set Child Title</button>
+<!-- using child template reference variable, we can access child property and method. -->
+<button (click)="child.greet()">Click</button> <br>
+<app-child1 #child [name]="fName"></app-child1>
+

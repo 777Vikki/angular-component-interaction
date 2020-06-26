@@ -1,0 +1,49 @@
+<!-- Data Interpolation -->
+{{ pageTitle }}
+
+<!-- Property Binding -->
+<div>
+  <img [src]="imgUrl" alt="No Image" />
+</div>
+
+<!-- Event Binding -->
+<div>
+  <button (click)="incrementCount()">Click</button>
+  <p>Clicked {{ count }} times.</p>
+</div>
+
+<!-- Two Way data Binding -->
+<div>
+  <input type="text" [(ngModel)]="name" />
+  <p>Welcome {{ name }}</p>
+</div>
+
+<!-- split two way data Binding -->
+<div>
+  <input type="text" [ngModel]="address1" (ngModelChange)="address1 = $event" />
+  <p>My address is {{ address1 }}</p>
+</div>
+
+<div>
+  <input
+    type="text"
+    [ngModel]="address2"
+    #add="ngModel"
+    (ngModelChange)="changeAddress($event)"
+    minlength="4"
+  />
+  <p>My address is {{ address2 }}</p>
+  <button [disabled]="!add.invalid">Min Length</button>
+</div>
+
+<!-- Getter and Setter -->
+<div>
+  <input type="text" [(ngModel)]="customerName" />
+  <p>Customer is {{ customerName }}</p>
+</div>
+
+<!-- viewChild decorator -->
+<div>
+  <input type="text" #usernameRef [(ngModel)]="userName" />
+  <p>User Name {{ userName }}</p>
+</div>
